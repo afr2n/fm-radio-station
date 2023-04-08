@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "station_title":"BeBop Jazz",
+        "station_url":"http://listen.181fm.com/181-90sdance_128k.mp3",
+        "station_seq":926825
+    },
+    {
+        "id":2,
+        "station_title":"Classical Guitar",
+        "station_url":"http://listen.181fm.com/181-classicalguitar_128k.mp3",
+        "station_seq":939575
+    },
+    {
+        "id":3,
+        "station_title":"Front Porch (Bluegrass)",
+        "station_url":"http://listen.181fm.com/181-frontporch_128k.mp3",
+        "station_seq":940275
+    },
+    {
+        "id":4,
+        "station_title":"Christmas Classic",
+        "station_url":"http://listen.181fm.com/181-xtraditional_128k.mp3",
+        "station_seq":940965
+    },
+    {
+        "id":5,
+        "station_title":"Techno Club",
+        "station_url":"http://listen.181fm.com/181-technoclub_128k.mp3",
+        "station_seq":941235
+    },
+    {
+        "id":6,
+        "station_title":"Salsa",
+        "station_url":"http://listen.181fm.com/181-salsa_128k.mp3",
+        "station_seq":941555
+    },
+    {
+        "id":7,
+        "station_title":"The Breeze",
+        "station_url":"http://listen.181fm.com/181-breeze_128k.mp3",
+        "station_seq":941885
+    }
+]

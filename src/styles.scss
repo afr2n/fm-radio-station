@@ -1,0 +1,60 @@
+$white:#fff;
+$light-grey:#c9c6c6;
+$dark-grey:rgb(62, 62, 62);
+
+@font-face {
+    font-family: "Opensans-regular";
+    src: local("Opensans-regular"),
+        url("./assets/fonts/OpenSans.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Opensans-regular' !important;
+}
+
+.btn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+
+    svg {
+        color: $dark-grey;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+}
+
+.icon-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.primary-button {
+    background-color: $white;
+}
+
+.ghost-button {
+    svg {
+        color: $white;
+    }
+}
+
+.background-radial {
+    background: rgb(48, 48, 48);
+    background: radial-gradient(circle,
+            rgba(48, 48, 48, 1) 0%,
+            rgba(64, 64, 64, 1) 33%,
+            rgba(48, 48, 48, 1) 100%);
+}
+
+.font-normal {
+    font-weight: normal !important;
+}
