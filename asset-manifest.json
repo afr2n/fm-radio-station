@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/fm-radio-station/static/css/main.e38f5c72.css",
+    "main.js": "/fm-radio-station/static/js/main.ee39e334.js",
+    "static/js/787.ee8f78e7.chunk.js": "/fm-radio-station/static/js/787.ee8f78e7.chunk.js",
+    "static/media/OpenSans.ttf": "/fm-radio-station/static/media/OpenSans.cee866affd5294849699.ttf",
+    "index.html": "/fm-radio-station/index.html",
+    "main.e38f5c72.css.map": "/fm-radio-station/static/css/main.e38f5c72.css.map",
+    "main.ee39e334.js.map": "/fm-radio-station/static/js/main.ee39e334.js.map",
+    "787.ee8f78e7.chunk.js.map": "/fm-radio-station/static/js/787.ee8f78e7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e38f5c72.css",
+    "static/js/main.ee39e334.js"
+  ]
+}
