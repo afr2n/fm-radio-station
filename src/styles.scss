@@ -11,7 +11,9 @@ $dark-grey:rgb(62, 62, 62);
 body {
     font-family: 'Opensans-regular' !important;
 }
-
+.songImage{
+    min-height:200px;
+}
 .btn {
     background-color: transparent;
     background-repeat: no-repeat;

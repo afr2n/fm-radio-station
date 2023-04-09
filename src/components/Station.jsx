@@ -4,7 +4,7 @@ import { generateRandom } from "../utils/helpers";
 import { api } from "../utils/api";
 import { trim } from "../utils/helpers";
 import CustomButton from "./Button";
-import { faBackwardStep, faForwardStep , faPlay, faPause, faShuffle} from '@fortawesome/free-solid-svg-icons';
+import { faBackwardStep, faForwardStep, faPlay, faPause, faShuffle } from '@fortawesome/free-solid-svg-icons';
 
 function Station() {
     var maxStationsLength = Stations.length;
@@ -67,7 +67,7 @@ function Station() {
                 api.get(songImgUrl)
                     .then(res => {
                         var album = res
-                        console.log("songImgUrl api.get result ", res);
+                        console.log("songImgUrl api get result ", res);
                         if (!album['Image']) {
                             album['Image'] = defaultalbumpic;
                         }
@@ -121,14 +121,14 @@ function Station() {
             let seq = newStation.station_seq;
             let stationSongsUrl = `http://listen.181fm.com:8443/ice_history.php?h=listen.181fm.com&https=&f=ice&p=7080&i=${iVal}&c=${seq}`;
             api.get(stationSongsUrl)
-                .then(res => {
-                    const allPastSongs = res;
-                    setCurrentSongInfo(allPastSongs[0]);
-                    streamhist_success([allPastSongs[0]]);
-                })
-                .catch(error => {
-                    console.log("ERROR", error);
-                })
+            .then(res => {
+                const allPastSongs = res;
+                setCurrentSongInfo(allPastSongs[0]);
+                streamhist_success([allPastSongs[0]]);
+            })
+            .catch(error => {
+                console.log("ERROR", error);
+            });
 
         }
     }, [currentActiveIndex]);
@@ -185,27 +185,28 @@ function Station() {
     }
 
     return (
-        <div className="">
-            <h5 className="font-normal">{currentActiveStation.station_title}</h5>
+        <div className="p-3" data-testid="station-wrapper">
+            <h5 className="font-normal" data-testid="station-title">{currentActiveStation.station_title}</h5>
             <div>
                 <img
+                    data-testid={"songImage-testid"}
                     className="songImage"
                     src={songImageCode}
                     alt={currentSongInfo?.title}
                 />
             </div>
-            <h3 className="font-normal">{currentSongInfo?.title}</h3>
+            <h3 className="font-normal" data-testid="song-title">{currentSongInfo?.title}</h3>
             {/* <h6>{currentSongInfo?.artist}</h6> */}
             <audio ref={audioPlayerRef}>
                 <source src={currentActiveStation.station_url} type="audio/mpeg" />
             </audio>
             <div className="mt-3">
-                <CustomButton disabled={currentActiveIndex === 0 && !isShuffleActive}  buttonOnClick={prevClicked} icon={faBackwardStep} variant="ghost-button" />
-                <CustomButton buttonOnClick={togglePlay} icon={isPlaying? faPause :faPlay} variant="primary-button" />
-                <CustomButton disabled={currentActiveIndex === maxStationsLength - 1 && !isShuffleActive} buttonOnClick={nextClicked} icon={faForwardStep} variant="ghost-button" />
+                <CustomButton dataTestid={"button-prev"} disabled={currentActiveIndex === 0 && !isShuffleActive} buttonOnClick={prevClicked} icon={faBackwardStep} variant="ghost-button" />
+                <CustomButton dataTestid={"button-play"} buttonOnClick={togglePlay} icon={isPlaying ? faPause : faPlay} variant="primary-button" />
+                <CustomButton dataTestid={"button-next"} disabled={currentActiveIndex === maxStationsLength - 1 && !isShuffleActive} buttonOnClick={nextClicked} icon={faForwardStep} variant="ghost-button" />
             </div>
             <div className="mt-3">
-                <CustomButton buttonOnClick={toggleShuffle} icon={faShuffle} variant={ isShuffleActive? "primary-button" : "ghost-button" }/>
+                <CustomButton dataTestid={"button-shuffle"} buttonOnClick={toggleShuffle} icon={faShuffle} variant={isShuffleActive ? "primary-button" : "ghost-button"} />
             </div>
         </div>
     );
